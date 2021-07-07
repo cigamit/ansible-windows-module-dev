@@ -11,6 +11,6 @@ In this example, we will take these 2 Ansible tasks, and create an Ansible modul
   register: suffixsearchlist
 
 - name: Set DNS search string
-  win_shell: Set-DnsClientGlobalSetting -SuffixSearchList {{ dns_domain_name }}, ec2.internal
+  win_shell: Set-DnsClientGlobalSetting -SuffixSearchList {{ dns_domain_name }}
   when: "dns_domain_name not in suffixsearchlist.stdout"
 ```

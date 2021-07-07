@@ -1,5 +1,7 @@
 # ansible-windows-module-dev
 
+https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general_windows.html
+
 In this example, we will take these 2 Ansible tasks, and create an Ansible module from them
 
 ```

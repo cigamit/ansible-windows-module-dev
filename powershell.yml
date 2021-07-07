@@ -1,5 +1,6 @@
 - name: Add Search Suffix via Powershell commands
   hosts: all
+  gather_facts: no
   tasks:
     - name: Get current DNS search string
       win_shell: Get-DnsClientGlobalSetting | Select SuffixSearchList

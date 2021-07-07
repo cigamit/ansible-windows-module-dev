@@ -1,0 +1,11 @@
+- name: Add Search Suffix via Powershell commands
+  hosts: all
+  tasks:
+    - name: Get current DNS search string
+      win_shell: Get-DnsClientGlobalSetting | Select SuffixSearchList
+      changed_when: false
+      register: suffixsearchlist
+
+    - name: Set DNS search string
+      win_shell: Set-DnsClientGlobalSetting -SuffixSearchList {{ dns_domain_name }}
+      when: "dns_domain_name not in suffixsearchlist.stdout"

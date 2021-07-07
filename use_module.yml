@@ -1,0 +1,6 @@
+- name: Add Search Suffix via Powershell commands
+  hosts: all
+  tasks:
+    - name: Set suffix to {{ dns_domain_name }}
+      win_dns_searchsuffix:
+        suffixes: "{{ dns_domain_name }}"
